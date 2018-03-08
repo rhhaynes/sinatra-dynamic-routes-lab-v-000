@@ -15,7 +15,7 @@ class App < Sinatra::Base
   end
   
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    (:word1..:word5).to_a.collect{|word| tmp[word]}.join(" ")+"."
+    (:word1..:word5).to_a.collect{|word| params[word]}.join(" ")+"."
   end
   
   get '/:operation/:number1/:number2' do
