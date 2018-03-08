@@ -20,10 +20,10 @@ class App < Sinatra::Base
   
   get '/:operation/:number1/:number2' do
     case params[:operation]
-    when 'add'      then params[:number1].to_f+params[:number2].to_f
-    when 'subtract' then params[:number1].to_f-params[:number2].to_f
-    when 'multiply' then params[:number1].to_f*params[:number2].to_f
-    when 'divide'   then params[:number1].to_f/params[:number2].to_f
+    when 'add'      then params[:number1].to_f + params[:number2].to_f
+    when 'subtract' then params[:number1].to_f - params[:number2].to_f
+    when 'multiply' then params[:number1].to_f * params[:number2].to_f
+    when 'divide'   then params[:number1].to_f / params[:number2].to_f
     end
   end
 
