@@ -15,7 +15,7 @@ class App < Sinatra::Base
   end
   
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    params.sort.collect{|a| a[1]}.join(" ")
+    params.select{|key| key.match(/word/)}.sort.collect{|arr| arr[1]}.join(" ")
   end
   
   get '/:operation/:number1/:number2' do
