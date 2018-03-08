@@ -15,15 +15,15 @@ class App < Sinatra::Base
   end
   
   get '/say/:word1/:word2/:word3/:word4/:word5' do
-    params.select{|key| key.match(/word/)}.sort.collect{|arr| arr[1]}.join(" ")
+    params.select{|key| key.match(/word/)}.sort.collect{|arr| arr[1]}.join(" ")+"."
   end
   
   get '/:operation/:number1/:number2' do
     case params[:operation]
-    when 'add'      then params[:number1].to_f + params[:number2].to_f
-    when 'subtract' then params[:number1].to_f - params[:number2].to_f
-    when 'multiply' then params[:number1].to_f * params[:number2].to_f
-    when 'divide'   then params[:number1].to_f / params[:number2].to_f
+    when 'add'      then (params[:number1].to_f + params[:number2].to_f).to_s
+    when 'subtract' then (params[:number1].to_f - params[:number2].to_f).to_s
+    when 'multiply' then (params[:number1].to_f * params[:number2].to_f).to_s
+    when 'divide'   then (params[:number1].to_f / params[:number2].to_f).to_s
     end
   end
 
